@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Mr Logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <audio src="./musicas/1.mp3" id="audio" autoplay loop></audio>
+    
+    <title>Clicker</title>
+</head>
+<body class="fundo" id="fundo">
+    <div class="topo">
+        <h1 class="titulo">Cookie Clicker</h1>
+    </div>
+    <div class="container-jogo">
+        <div class="area-jogo">
+            <strong id="up">Valor do click: 1</strong>
+            <strong id="auto-up">Valor do autoclick: 0</strong>
+            <img src="./imagens/1.png" alt="" id="biscoito" class="biscoito">
+            <h3 id="meus-cookies">Seus cookies: </h3>
+        </div>
+        <div class="area-de-botoes">
+            <!-- deixar escuro & redes sociais -->
+            <a href="https://www.linkedin.com/in/ismael-moraes-15790828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="redes bi bi-linkedin"></a>
+            <a href="https://github.com/Ismael-Moraes" class="redes bi bi-github"></a>
+            <a href="https://www.instagram.com/ismael.moraes_?igsh=MXRuamF1aDh1dGdlcg==" class="redes bi bi-instagram"></a> <br>
+            <button class="claro-escuro"><span class="span-claridade">Escuro</span></button>
+        </div>
+
+        <div class="area-upgrades">
+            <strong>Upgrades</strong>
+            <button id="upgrade-1">
+                Click +1 <br> <span id="span-1">Valor: 100</span>
+            </button>
+            <button id="upgrade-2">
+                Click +3 <br> <span id="span-2">Valor: 1700</span>
+            </button>
+            <button id="upgrade-3">
+                Click +6 <br> <span id="span-3">Valor: 4000</span>
+            </button>
+            <button id="upgrade-4">
+                Click +12 <br> <span id="span-4">Valor: 13500</span>
+            </button>
+            <button id="upgrade-5">
+                Click +25 <br> <span id="span-5">Valor: 25000</span>
+            </button>
+            <button id="upgrade-6">
+                Click +65 <br> <span id="span-6">Valor: 75000</span>
+            </button>
+        </div>
+
+        <div class="area-mega-up">
+            <!-- botões de multiplicação -->
+            <strong>Mega Upgrades</strong>
+            <button id="upgrade-7">
+                Click x1,5 +200<br> <span id="span-7">Valor: 225000</span>
+            </button>
+            <button id="upgrade-8">
+                Click x2,6<br> <span id="span-8">Valor: 750000</span>
+            </button>
+            <button id="upgrade-9">
+                Click x3,6<br> <span id="span-9">Valor: 5250000</span>
+            </button>
+            <button id="upgrade-10">
+                Click x5,5 +20000<br> <span id="span-10">Valor: 13050000</span>
+            </button>
+            <button id="upgrade-11">
+                Click x10,6<br> <span id="span-11">Valor: 80000000</span>
+            </button>
+            <button id="upgrade-12">
+                Click x15,6<br> <span id="span-12">Valor: 855000000</span>
+            </button>
+            <button id="upgrade-13">
+                Click x50<br> <span id="span-13">Valor: 52500050000</span>
+            </button>
+            <button id="upgrade-14">
+                Click x100<br> <span id="span-14">Valor: 2559040028922</span>
+            </button>
+        </div>
+        <div class="area-quebrada">
+            <!-- botões de quebrar o jogo -->
+            <!-- botao para mudar velo do cookie -->
+            <!-- mudar velo colorido -->
+            <strong>Quebrar tudo</strong>
+            <button class="auto-click-1">
+                Autoclick +1<br> <span id="span-auto1">Valor: 1000</span>
+            </button>
+            <button class="auto-click-2">
+                Autoclick +25<br> <span id="span-auto2">Valor: 25000</span>
+            </button>
+            <button class="auto-click-3">
+                Autoclick +75<br> <span id="span-auto3">Valor: 75000</span>
+            </button>
+            <button class="auto-click-4">
+                Autoclick +150<br> <span id="span-auto4">Valor: 175000</span>
+            </button>
+            <button class="speed">
+                Quebrar a velocidade<br> <span id="span-speed">Valor: 200000000</span>
+            </button>
+            <button class="multi-cookies">
+                Seus cookies x2<br> <span id="span-multi">Valor: 12500</span>
+            </button>
+        </div>
+        <div class="mudar-imagem-musica">
+            <!-- mudar a imagem do biscoito -->
+            <strong>Mudar de tudo</strong>
+            <button class="mudar-imagem">Mudar cookie<br> <span id="span-imagem">Valor: 10000</span></button>
+            <button class="mudar-musica">Mudar musica<br> <span id="span-musica">Valor: 50000</span></button>
+            <button class="rainbow">Fundo colorido<br> <span id="span-colorido">Valor: 250000</span></button>
+        </div>
+        <div class="voar">
+            <img src="ovni.png" alt="" class="ovni" id="ovni">
+        </div>
+        <div class="biscoitinhos">
+            <!-- varios biscoitos com barra de vida -->
+            <div class="bis">
+                <img src="imagens2/yes.webp" class="bi b1"></img>
+                <p class="legenda">Vida: <span id="span-b1">10000</span></p>
+            </div>
+            <div class="bis">
+                <img src="imagens2/cookiepin.png" class="bi b2"></img>
+                <p class="legenda">Vida: <span id="span-b2">500000</span></p>
+            </div>
+            <div class="bis">
+                <img src="imagens2/mordida.webp" class="bi b3"></img>
+                <p class="legenda">Vida: <span id="span-b3">25000000</span></p>
+            </div>
+            <div class="bis">
+                <img src="imagens2/desenho.png" class="bi b4"></img>
+                <p class="legenda">Vida: <span id="span-b4">1250000000</span></p>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="script.js"></script>
+    <script src="config.js"></script>
+</html>
