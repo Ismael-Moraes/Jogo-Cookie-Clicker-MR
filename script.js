@@ -1,6 +1,38 @@
 const biscoito = document.querySelector('#biscoito')
 const meusCookies = document.querySelector('#meus-cookies')
 const up = document.querySelector('#up')
+const larguraJanela = window.innerWidth;
+const audioClick = document.getElementById('audioClick')
+const audioShop = document.getElementById('audioShop')
+const dano = document.getElementById('dano')
+audioShop.volume = dano.volume = 0.3;
+
+let valorClick = 1
+let quantidadeCookies = 0
+meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
+
+function clicado(){
+    quantidadeCookies = quantidadeCookies + valorClick;
+    meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies;
+
+    const clickClone = audioClick.cloneNode()
+    clickClone.volume = 0.02;
+    clickClone.play()
+
+    const clicks = document.createElement('div');
+    clicks.textContent = "🍪";
+    clicks.classList.add('clicks');
+
+    const larguraJanela = window.innerWidth;
+    const lugarClick = Math.floor(Math.random() * (larguraJanela - 10));
+    clicks.style.left = `${lugarClick}px`;
+document.body.appendChild(clicks);
+
+clicks.addEventListener('animationend', () => {
+    clicks.remove()});
+}
+
+// Upgrades
 
 const upgrade1 = document.getElementById('upgrade-1')
 const span1 = document.querySelector('#span-1')
@@ -21,15 +53,6 @@ const upgrade6 = document.getElementById('upgrade-6')
 const span6 = document.querySelector('#span-6')
 let valor6 = 75000
 
-let valorClick = 1
-let quantidadeCookies = 0
-meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
-
-function clicado(){
-    quantidadeCookies = quantidadeCookies + valorClick
-    meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
-}
-
 function botao1(){
     if (valor1 <= quantidadeCookies){
         valorClick = valorClick + 1
@@ -38,6 +61,7 @@ function botao1(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor1 = Math.floor(valor1*1.3)
         span1.innerHTML = "Valor: " + valor1
+        audioShop.play()
     }
 }
 
@@ -49,6 +73,7 @@ function botao2(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor2 = Math.floor(valor2*1.2)
         span2.innerHTML = "Valor: " + valor2
+        audioShop.play()
     }
 }
 
@@ -60,6 +85,7 @@ function botao3(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor3 = Math.floor(valor3*1.1)
         span3.innerHTML = "Valor: " + valor3
+        audioShop.play()
     }
 }
 
@@ -71,6 +97,7 @@ function botao4(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor4 = Math.floor(valor4*1.05)
         span4.innerHTML = "Valor: " + valor4
+        audioShop.play()
     }
 }
 
@@ -82,6 +109,7 @@ function botao5(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor5 = Math.floor(valor5*1.05)
         span5.innerHTML = "Valor: " + valor5
+        audioShop.play()
     }
 }
 
@@ -93,6 +121,7 @@ function botao6(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor6 = Math.floor(valor6*1.025)
         span6.innerHTML = "Valor: " + valor6
+        audioShop.play()
     }
 }
 
@@ -140,6 +169,7 @@ function botao7(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor7 = Math.floor(valor7*1.25)
         span7.innerHTML = "Valor: " + valor7
+        audioShop.play()
     }
 }
 
@@ -151,6 +181,7 @@ function botao8(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor8 = Math.floor(valor8*1.35)
         span8.innerHTML = "Valor: " + valor8
+        audioShop.play()
     }
 }
 
@@ -162,6 +193,7 @@ function botao9(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor9 = Math.floor(valor9*1.45)
         span9.innerHTML = "Valor: " + valor9
+        audioShop.play()
     }
 }
 
@@ -173,6 +205,7 @@ function botao10(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor10 = Math.floor(valor10*1.55)
         span10.innerHTML = "Valor: " + valor10
+        audioShop.play()
     }
 }
 
@@ -184,6 +217,7 @@ function botao11(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor11 = Math.floor(valor11*1.65)
         span11.innerHTML = "Valor: " + valor11
+        audioShop.play()
     }
 }
 
@@ -195,6 +229,7 @@ function botao12(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor12 = Math.floor(valor12*1.75)
         span12.innerHTML = "Valor: " + valor12
+        audioShop.play()
     }
 }
 
@@ -206,6 +241,7 @@ function botao13(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor13 = Math.floor(valor13*1.85)
         span13.innerText = "Valor: " + valor13
+        audioShop.play()
     }
 }
 
@@ -217,6 +253,7 @@ function botao14(){
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         valor14 = Math.floor(valor14*1.95)
         span14.innerText = "Valor: " + valor14
+        audioShop.play()
     }
 }
 
@@ -239,6 +276,7 @@ let valorImagem = 10000
 
 function mudarImagem (){
     if (valorImagem <= quantidadeCookies){
+        audioShop.play()
         if (imagemAtual <= 5){
             imagemAtual = imagemAtual + 1
             quantidadeCookies = quantidadeCookies - valorImagem
@@ -270,6 +308,7 @@ let valorMusica = 50000
 
 function mudarMusica (){
     if (valorMusica <= quantidadeCookies){
+        audioShop.play()
         if (musicaAtual <= 4){
             musicaAtual = musicaAtual + 1
             quantidadeCookies = quantidadeCookies - valorMusica
@@ -295,6 +334,7 @@ let valorColorido = 2500000
 
 function mudarFundo (){
     if (valorColorido <= quantidadeCookies){
+        audioShop.play()
         quantidadeCookies = quantidadeCookies - valorColorido
         meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
         fundo.classList.toggle('colorido')
@@ -332,13 +372,14 @@ function autoClick1(){
         quantidadeCookies = quantidadeCookies - valorAuto1
         valorAuto1 = Math.floor(valorAuto1*1.25)
         compras = compras + 1
-        autoUp.innerText = "Valor do autoclick: " + compras
+        autoUp.innerText = "Valor do autoclick: " + compras + "/s"
         function click1 (){
             quantidadeCookies = quantidadeCookies + 1
             meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
             spanAuto1.innerText = "Valor: " + valorAuto1
     }}
     setInterval(click1, 1000)
+    audioShop.play()
 }
 
 function autoClick2(){
@@ -346,13 +387,14 @@ function autoClick2(){
         quantidadeCookies = quantidadeCookies - valorAuto2
         valorAuto2 = Math.floor(valorAuto2*1.2)
         compras = compras + 25
-        autoUp.innerText = "Valor do autoclick: " + compras
+        autoUp.innerText = "Valor do autoclick: " + compras + "/s"
         function click2 (){
             quantidadeCookies = quantidadeCookies + 25
             meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
             spanAuto2.innerText = "Valor: " + valorAuto2
     }}
     setInterval(click2, 1000)
+    audioShop.play()
 }
 
 function autoClick3(){
@@ -360,13 +402,14 @@ function autoClick3(){
         quantidadeCookies = quantidadeCookies - valorAuto3
         valorAuto3 = Math.floor(valorAuto3*1.15)
         compras = compras + 75
-        autoUp.innerText = "Valor do autoclick: " + compras
+        autoUp.innerText = "Valor do autoclick: " + compras + "/s"
         function click3 (){
             quantidadeCookies = quantidadeCookies + 75
             meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
             spanAuto3.innerText = "Valor: " + valorAuto3
     }}
     setInterval(click3, 1000)
+    audioShop.play()
 }
 
 function autoClick4(){
@@ -374,13 +417,14 @@ function autoClick4(){
         quantidadeCookies = quantidadeCookies - valorAuto4
         valorAuto4 = Math.floor(valorAuto4*1.1)
         compras = compras + 150
-        autoUp.innerText = "Valor do autoclick: " + compras
+        autoUp.innerText = "Valor do autoclick: " + compras + "/s"
         function click4 (){
             quantidadeCookies = quantidadeCookies + 150
             meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies
             spanAuto4.innerText = "Valor: " + valorAuto4
     }}
     setInterval(click4, 1000)
+    audioShop.play()
 }
 
 botaoAuto1.addEventListener('click', autoClick1)
@@ -395,6 +439,7 @@ const spanVelo = document.getElementById('span-speed')
 let valorVelo = 200000000
 
 function quebrarVelocidade (){
+    audioShop.play()
     if (quantidadeCookies >= valorVelo) {
         quantidadeCookies = quantidadeCookies - valorVelo
         spanVelo.innerText = "Valor: 0"
@@ -421,6 +466,7 @@ const spanMulti = document.getElementById('span-multi')
 let valorMulti = 12500
 
 function multiplicarCookies (){
+    audioShop.play()
     if (quantidadeCookies >= valorMulti) {
         quantidadeCookies = quantidadeCookies - valorMulti
         quantidadeCookies = quantidadeCookies * 2
@@ -475,51 +521,71 @@ const spanB2 = document.getElementById('span-b2')
 const spanB3 = document.getElementById('span-b3')
 const spanB4 = document.getElementById('span-b4')
 let vida1 = 10000
+let reward1 = 15000
 let vida2 = 500000
+let reward2 = 550000
 let vida3 = 25000000
+let reward3 = 26000000
 let vida4 = 1250000000
+let reward4 = 1300000000
 
 function bossb1 (){
+    dano.play()
     vida1 = vida1 - valorClick
     spanB1.innerHTML = vida1
     if (vida1 <= 0) {
-        quantidadeCookies = quantidadeCookies + 15000
+        quantidadeCookies = quantidadeCookies + reward1
         meusCookies.innerText = "Seus cookies: " + quantidadeCookies
-        vida1 = 10000
+        vida1 = 0
         spanB1.innerHTML = vida1
+        reward1 = 0
+        botaoB1.style.opacity = 0.4
+        botaoB4.classList.remove('b1')
     }
 }
 
 function bossb2 (){
+    dano.play()
     vida2 = vida2 - valorClick
     spanB2.innerHTML = vida2
     if (vida2 <= 0) {
-        quantidadeCookies = quantidadeCookies + 250000
+        quantidadeCookies = quantidadeCookies + reward2
         meusCookies.innerText = "Seus cookies: " + quantidadeCookies
-        vida2 = 500000
+        vida2 = 0
         spanB2.innerHTML = vida2
+        reward2 = 0
+        botaoB2.style.opacity = 0.4
+        botaoB4.classList.remove('b2')
     }
 }
 
 function bossb3 (){
+    dano.play()
     vida3 = vida3 - valorClick
     spanB3.innerHTML = vida3
     if (vida3 <= 0) {
-        quantidadeCookies = quantidadeCookies + 4500000
+        quantidadeCookies = quantidadeCookies + reward3
         meusCookies.innerText = "Seus cookies: " + quantidadeCookies
-        vida3 = 25000000
+        vida3 = 0
         spanB3.innerHTML = vida3
+        reward3 = 0
+        botaoB3.style.opacity = 0.4
+        botaoB4.classList.remove('b3')
     }
 }
 
 function bossb4 (){
+    dano.play()
     vida4 = vida4 - valorClick
     spanB4.innerHTML = vida4
     if (vida4 <= 0) {
-        quantidadeCookies = quantidadeCookies + 85000000
+        quantidadeCookies = quantidadeCookies + reward4
         meusCookies.innerText = "Seus cookies: " + quantidadeCookies
-        vida4 = 1250000000
+        vida4 = 0
         spanB4.innerHTML = vida4
+        reward4 = 0
+        botaoB4.style.opacity = 0.4
+        botaoB4.classList.remove('b4')
     }
 }
 
@@ -527,3 +593,119 @@ botaoB1.addEventListener('click', bossb1)
 botaoB2.addEventListener('click', bossb2)
 botaoB3.addEventListener('click', bossb3)
 botaoB4.addEventListener('click', bossb4)
+
+// FIM?
+const fim = document.querySelector(".fim")
+
+function theEnd(){
+    if(quantidadeCookies >= 1000000000000000){
+        const telaDeFim = document.createElement('div');
+        telaDeFim.textContent = "FIM";
+        telaDeFim.classList.add('telaDeFim');
+        document.body.appendChild(telaDeFim);
+        audio.volume = 0
+    }
+}
+
+fim.addEventListener('click', theEnd)
+
+
+// SAVEEEEEEEEE
+function salvarProgresso() {
+    const dados = {
+        // Salva os dados importantes
+        quantidadeCookies,
+        valorClick,
+        valor1, valor2, valor3, valor4, valor5, valor6,
+        valor7, valor8, valor9, valor10, valor11, valor12, valor13, valor14,
+        valorImagem, imagemAtual,
+        valorMusica, musicaAtual,
+        valorColorido,
+        valorAuto1, valorAuto2, valorAuto3, valorAuto4,
+        valorVelo,
+        valorMulti,
+        compras,
+        vida1, vida2, vida3, vida4,
+        valorToddy
+    };
+    localStorage.setItem('cookieGameSave', JSON.stringify(dados));
+}
+
+function carregarProgresso() {
+    const dados = JSON.parse(localStorage.getItem('cookieGameSave'));
+    if (dados) {
+        // Atualiza os Dados
+        quantidadeCookies = dados.quantidadeCookies;
+        valorClick = dados.valorClick;
+        valor1 = dados.valor1;
+        valor2 = dados.valor2;
+        valor3 = dados.valor3;
+        valor4 = dados.valor4;
+        valor5 = dados.valor5;
+        valor6 = dados.valor6;
+        valor7 = dados.valor7;
+        valor8 = dados.valor8;
+        valor9 = dados.valor9;
+        valor10 = dados.valor10;
+        valor11 = dados.valor11;
+        valor12 = dados.valor12;
+        valor13 = dados.valor13;
+        valor14 = dados.valor14;
+        valorImagem = dados.valorImagem;
+        imagemAtual = dados.imagemAtual;
+        valorMusica = dados.valorMusica;
+        musicaAtual = dados.musicaAtual;
+        valorColorido = dados.valorColorido;
+        valorAuto1 = dados.valorAuto1;
+        valorAuto2 = dados.valorAuto2;
+        valorAuto3 = dados.valorAuto3;
+        valorAuto4 = dados.valorAuto4;
+        valorVelo = dados.valorVelo;
+        valorMulti = dados.valorMulti;
+        compras = dados.compras;
+        vida1 = dados.vida1;
+        vida2 = dados.vida2;
+        vida3 = dados.vida3;
+        vida4 = dados.vida4;
+        valorToddy = dados.valorToddy;
+
+        // Atualiza a interface
+        meusCookies.innerHTML = "Seus cookies: " + quantidadeCookies;
+        up.innerHTML = "Valor do click: " + valorClick;
+        span1.innerText = "Valor: " + valor1;
+        span2.innerText = "Valor: " + valor2;
+        span3.innerText = "Valor: " + valor3;
+        span4.innerText = "Valor: " + valor4;
+        span5.innerText = "Valor: " + valor5;
+        span6.innerText = "Valor: " + valor6;
+        span7.innerText = "Valor: " + valor7;
+        span8.innerText = "Valor: " + valor8;
+        span9.innerText = "Valor: " + valor9;
+        span10.innerText = "Valor: " + valor10;
+        span11.innerText = "Valor: " + valor11;
+        span12.innerText = "Valor: " + valor12;
+        span13.innerText = "Valor: " + valor13;
+        span14.innerText = "Valor: " + valor14;
+        spanImagem.innerText = "Valor: " + valorImagem;
+        spanMusica.innerText = "Valor: " + valorMusica;
+        spanColorido.innerText = "Valor: " + valorColorido;
+        autoUp.innerText = "Valor do autoclick: " + compras + "/s";
+        spanAuto1.innerText = "Valor: " + valorAuto1;
+        spanAuto2.innerText = "Valor: " + valorAuto2;
+        spanAuto3.innerText = "Valor: " + valorAuto3;
+        spanAuto4.innerText = "Valor: " + valorAuto4;
+        spanVelo.innerText = "Valor: " + valorVelo;
+        spanMulti.innerText = "Valor: " + valorMulti;
+        spanB1.innerText = vida1;
+        spanB2.innerText = vida2;
+        spanB3.innerText = vida3;
+        spanB4.innerText = vida4;
+
+        imagemCookie.src = "./imagens/" + imagemAtual + ".png";
+        musica.src = "./musicas/" + musicaAtual + ".mp3";
+    }
+}
+
+carregarProgresso()
+
+setInterval(salvarProgresso, 1000); // salva a cada 1 segundo

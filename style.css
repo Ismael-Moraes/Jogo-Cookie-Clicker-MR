@@ -18,19 +18,21 @@ body {
 
 .titulo{
     font-family: fantasy;
-    font-size: 40px;
-    color: #cf7b43;
-    text-shadow: 2px 1px 1px #501F15;
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 2px 2px 3px #501F15;
+    padding-top: 2px;
 }
 
 .container-jogo{
-padding-top: 50px;
+padding-top: 25px;
 }
 
 .area-jogo{
     text-align: center;
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
     & > img{
         width: 300px;
         height: 300px;
@@ -39,15 +41,41 @@ padding-top: 50px;
         align-self: center;
         color: #cf7b43;
         text-shadow: 1px 1px 1px #501F15;
-        background-color: #501f15be;
         width: 170px;
         border-radius: 4px;
         margin: 3px;
     }
 }
+.escuroValores{
+    background-color: #501f15be;
+}
+.claroValores{
+    background-color: #d67535;
+}
 
 #meus-cookies{
     word-wrap: break-word;
+}
+
+.clicks{
+    z-index: -1;
+    height: 5px;
+    top: -10px;
+    position: absolute;
+    transform: translateX(-30%);
+    animation: caindo 2s ease-in forwards, sumindo 5s infinite;
+}
+
+@keyframes caindo {
+    to {
+        top: calc(100vh - 300px);
+    }
+}
+
+@keyframes sumindo {
+    to {
+        opacity: 0.2;
+    }
 }
 
 .biscoito{
@@ -55,6 +83,14 @@ padding-top: 50px;
 }
 .biscoito2{
     animation: girando 1.2s infinite linear;
+}
+
+.biscoito:hover{
+    cursor: crosshair;
+}
+
+.biscoito:active, .biscoito2:active{
+    animation: click 0.2s;
 }
 
 @keyframes girando {
@@ -82,7 +118,6 @@ padding-top: 50px;
         background-color: #cf7b43;
         text-shadow: 1px 1px 1px #501F15;
         box-shadow: 2px 2px 4px #000;
-
         color: #fff;
         position: absolute;
         align-self: center;
@@ -92,19 +127,17 @@ padding-top: 50px;
     }
 }
 
-.area-upgrades{
+.area-upgrades, .area-quebrada, .area-mega-up, .mudar-imagem-musica{
     position: absolute;
     display: flex;
     flex-direction: column;
-    right: 20px;
-    top: 20px;
     width: 150px;
     border-radius: 8px;
     background-color: #C66C31;
     box-shadow: 2px 2px 4px #000;
     & > button {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        background-color: #E79D6D;
+        background-color: #d1824d;
         color: #fff;
         text-shadow: 0px 0px 6px #000;
         margin: 5px;
@@ -112,6 +145,7 @@ padding-top: 50px;
         border: none;
         padding: 2px;
     } & > strong {
+        padding-top: 5px;
         height: 25px;
         text-align: center;
         background-color: #501F15;
@@ -119,63 +153,58 @@ padding-top: 50px;
         text-shadow: 1px 1px 2px #000;
         border-radius: 8px 8px 0px 0px;
     }
+}
+
+/* Valores */
+.forte{
+    color: #ffc280;
+    text-shadow: #000 1px 1px 1px;
+}
+
+.area-upgrades{
+    right: 20px;
+    top: 20px;
 }
 
 .area-mega-up{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
     right: 20px;
     top: 340px;
-    width: 150px;
-    border-radius: 8px;
-    background-color: #C66C31;
-    box-shadow: 2px 2px 4px #000;
-    & > button {
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        background-color: #E79D6D;
-        color: #fff;
-        text-shadow: 0px 0px 6px #000;
-        margin: 5px;
-        border-radius: 4px;
-        border: none;
-        padding: 2px;
-    } & > strong {
-        height: 25px;
-        text-align: center;
-        background-color: #501F15;
-        color: #fff;
-        text-shadow: 1px 1px 2px #000;
-        border-radius: 8px 8px 0px 0px;
-    }
 }
 
 .mudar-imagem-musica{
+    left: 20px;
+    top: 110px;
+}
+
+.area-quebrada {
+    left: 20px;
+    top: 300px;
+}
+
+.theEnd{
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 20px;
-    top: 110px;
     width: 150px;
     border-radius: 8px;
-    background-color: #C66C31;
-    box-shadow: 2px 2px 4px #000;
-    & > button {
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        background-color: #E79D6D;
+    left: 20px;
+    top: 620px;
+    background-color: #000000;
+    box-shadow: 2px 2px 4px #000000, 2px 2px 4px #fff;
+    & > strong {
         color: #fff;
-        text-shadow: 0px 0px 6px #000;
+        text-align: center;
+        padding-top: 5px;
+        height: 25px;
+    } & > button {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-color: #ffffff;
+        color: #000000;
+        text-shadow: 0px 0px 6px #ffffff;
         margin: 5px;
         border-radius: 4px;
         border: none;
         padding: 2px;
-    } & > strong {
-        height: 25px;
-        text-align: center;
-        background-color: #501F15;
-        color: #fff;
-        text-shadow: 1px 1px 2px #000;
-        border-radius: 8px 8px 0px 0px;
     }
 }
 
@@ -219,35 +248,6 @@ padding-top: 50px;
     }
 }
 
-.area-quebrada {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    left: 20px;
-    top: 300px;
-    width: 150px;
-    border-radius: 8px;
-    background-color: #C66C31;
-    box-shadow: 2px 2px 4px #000;
-    & > button {
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        background-color: #E79D6D;
-        color: #fff;
-        text-shadow: 0px 0px 6px #000;
-        margin: 5px;
-        border-radius: 4px;
-        border: none;
-        padding: 2px;
-    } & > strong {
-        height: 25px;
-        text-align: center;
-        background-color: #501F15;
-        color: #fff;
-        text-shadow: 1px 1px 2px #000;
-        border-radius: 8px 8px 0px 0px;
-    }
-}
-
 .ovni{
     display: none;
 }
@@ -276,16 +276,22 @@ padding-top: 50px;
     }
 }
 
-
-.biscoitinhos{
+.boss{
     display: flex;
     flex-direction: row;
     text-align: center;
-    color: #C66C31;
-    background: #4e261eea;
     border-radius: 14px;
     box-shadow: 1px 1px 3px #000;
     padding: 3px;
+}
+
+.biscoitinhos{
+    color: #C66C31;
+    background: #4e261eea;
+}
+.biscoitinhos-escuros{
+    background: #C66C31;
+    color: #fff;
 }
 
 .legenda{
@@ -313,3 +319,17 @@ padding-top: 50px;
         transform: scale(1);
     }
 }
+
+.telaDeFim{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+/* Pra celular */
